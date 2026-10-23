@@ -1,0 +1,29 @@
+# Only publish maintained source files from the workspace root.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/iAI 請求格式教學.md
+!/nkust-iai/
+
+# Python/runtime caches and local environments.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Credentials, local settings, logs and generated results.
+.env
+.env.*
+*.pem
+*.key
+*.log
+output/
+outputs/
+results/
+*.zip
+.DS_Store
+Thumbs.db
