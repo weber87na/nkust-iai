@@ -15,6 +15,34 @@
 
 需要 Python 3.10+，CLI 不需要安裝其他 Python 套件。先在本機設定 `IAI_API_KEY` 環境變數；金鑰不放入檔案、Git 或前端程式。
 
+### 設定 IAI_API_KEY 環境變數
+
+請先從 [高科大 iAI 官網](https://www.iai.nkust.edu.tw/) 的「取得 API KEY」申請金鑰，再於本機設定。CLI 會讀取執行程序的 `IAI_API_KEY`；不會自動載入 `.env`，也不會自動讀取尚未繼承到目前程序的 Windows 使用者／系統變數。
+
+**只在目前 PowerShell 工作階段使用**（PowerShell 7.1+，輸入時遮蔽金鑰）：
+
+```powershell
+$env:IAI_API_KEY = Read-Host '輸入 iAI API Key' -MaskInput
+```
+
+**保存為 Windows 使用者環境變數**（先完成上面的輸入）：
+
+```powershell
+[Environment]::SetEnvironmentVariable('IAI_API_KEY', $env:IAI_API_KEY, 'User')
+```
+
+這會將金鑰保存到目前使用者的環境變數，不需要系統管理員權限。之後新開的程序會繼承設定；已開啟的終端機或 Codex 請重新啟動，讓新設定生效。使用舊版 Windows PowerShell 時，也可從 Windows「環境變數」設定畫面新增同名的使用者變數。
+
+確認目前程序已讀到設定，只顯示是否存在，不輸出金鑰內容：
+
+```powershell
+-not [string]::IsNullOrWhiteSpace($env:IAI_API_KEY)
+```
+
+回傳 `True` 代表目前程序已設定此變數；金鑰是否有效仍需用 `models` 請求確認。環境變數的值只填 API Key 本身，不加 `Bearer ` 前綴。不要將實際金鑰貼到 README、聊天或提交進 Git。
+
+### 執行 CLI
+
 在本儲存庫根目錄執行：
 
 ```powershell
