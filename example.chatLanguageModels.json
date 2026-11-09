@@ -1,0 +1,65 @@
+[
+	{
+		"name": "NVIDIA NIM",
+		"vendor": "nvidia-nim",
+		"apiKey": "${input:chat.lm.secret.7xbxc36x}"
+	},
+	{
+		"name": "NKUSTIAI",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.xced47ex}",
+		"apiType": "chat-completions",
+		"models": [
+			{
+				"id": "Furen-coder",
+				"name": "Nemotron 3 Super 120B - Coder",
+				"url": "https://www.iai.nkust.edu.tw/aihub/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"thinking": true,
+				"contextWindow": 1048576,
+				"maxOutputTokens": 32768
+			},
+			{
+				"id": "Furen-std",
+				"name": "Nemotron 3 Super 120B - Standard",
+				"url": "https://www.iai.nkust.edu.tw/aihub/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"thinking": true,
+				"contextWindow": 1048576,
+				"maxOutputTokens": 32768
+			},
+			{
+				"id": "Furen-large",
+				"name": "Nemotron 3 Super 120B - Large",
+				"url": "https://www.iai.nkust.edu.tw/aihub/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"thinking": true,
+				"contextWindow": 1048576,
+				"maxOutputTokens": 32768
+			},
+			{
+				"id": "Furen-max",
+				"name": "Nemotron 3 Ultra 550B - Max",
+				"url": "https://www.iai.nkust.edu.tw/aihub/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"thinking": true,
+				"contextWindow": 1048576,
+				"maxOutputTokens": 32768
+			},
+			{
+				"id": "Furen-omni",
+				"name": "Nemotron 3 Nano Omni 30B",
+				"url": "https://www.iai.nkust.edu.tw/aihub/v1/chat/completions",
+				"toolCalling": true,
+				"vision": true,
+				"thinking": true,
+				"contextWindow": 262144,
+				"maxOutputTokens": 131072
+			}
+		]
+	}
+]
